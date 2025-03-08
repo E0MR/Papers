@@ -1,16 +1,16 @@
 :root {
   --bgc: #546869;
-  --c: #D1B262;
-  --stroke: #D1B262;
-  
+  --c: #d1b262;
+  --stroke: #d1b262;
+
   /* Yellow */
-  --c1: #D1B262;
-  --c2: #E9CC85;
-  
+  --c1: #d1b262;
+  --c2: #e9cc85;
+
   --c3: #595147;
-  
-  --c4: #485A5B;
-  
+
+  --c4: #485a5b;
+
   --font-min: 1.5rem;
   /* Minimum size */
   --font-max: 2rem;
@@ -28,17 +28,17 @@
 
 @font-face {
   font-family: "ArefRuqaa Bold";
-  src: url('fonts/ArefRuqaa-Bold.ttf');
+  src: url("fonts/ArefRuqaa-Bold.ttf");
 }
 
 @font-face {
   font-family: "ArefRuqaa Regular";
-  src: url('fonts/ArefRuqaa-Regular.ttf');
+  src: url("fonts/ArefRuqaa-Regular.ttf");
 }
 
 @font-face {
   font-family: "Amiri Bold";
-  src: url('fonts/Amiri-Bold.ttf');
+  src: url("fonts/Amiri-Bold.ttf");
 }
 
 html,
@@ -56,11 +56,10 @@ html {
 body {
   font-size: 2rem;
   background-color: var(--bgc);
-  
+
   transition: 0.5s;
   font-family: "ArefRuqaa Regular", serif;
   color: var(--c);
-  
 }
 
 body::-webkit-scrollbar {
@@ -69,11 +68,10 @@ body::-webkit-scrollbar {
   -webkit-appearance: none;
 }
 
-
 body:has(input[name="theme"]:checked) {
   --bgc: black;
   --c: white;
-  --stroke: #E9CC85;
+  --stroke: #e9cc85;
 }
 
 body:has(input[name="theme"]:checked) .up {
@@ -84,7 +82,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
 /* Header */
 header {
   display: flex;
@@ -92,7 +89,7 @@ header {
   justify-content: center;
   text-align: center;
   width: 100%;
-  
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -102,7 +99,7 @@ header {
   backdrop-filter: blur(5px);
 }
 
-header>img {
+header > img {
   position: absolute;
   right: 2rem;
   width: 10rem;
@@ -131,7 +128,7 @@ header span input {
   z-index: 99;
 }
 
-input[name="theme"]:checked+img {
+input[name="theme"]:checked + img {
   filter: invert(1);
 }
 
@@ -162,7 +159,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #D1B262;
+  color: #d1b262;
   font-size: clamp(var(--font-min), var(--font-preferred), var(--font-max));
 }
 
@@ -184,7 +181,8 @@ nav ul li a {
 
 /* Main */
 
-main {}
+main {
+}
 
 h1 {
   text-align: center;
@@ -199,7 +197,7 @@ h1 {
 h2 {
   text-align: center;
   margin: 5rem 0;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -245,13 +243,16 @@ section.about img {
 section.services {
   --auto-grid-min-size: 30rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  grid-gap: 2.5rem;
   padding: 0 5rem;
 }
 
 .services div {
-  flex: 20rem 0.5;
+  flex: var(--auto-grid-min-size) 1;
   text-align: center;
   background-color: var(--c4);
   padding: 2.5rem;
@@ -272,8 +273,12 @@ section.services {
   margin-bottom: 2.5rem;
 }
 
+section.examples {
+}
 
-section.exampls {}
+section.examples div {
+  margin: 0 5rem;
+}
 
 section.contact {
   display: flex;
@@ -294,7 +299,6 @@ section.contact {
   transform: translateX(0rem);
 }
 
-
 /* Footer */
 
 footer {
@@ -309,14 +313,26 @@ footer img {
   filter: drop-shadow(0 0 10rem var(--c2));
 }
 
-services div:nth:child(4) {
+.services div:nth-child(4) {
   grid-column: auto;
 }
 
-/* mini Phone*/
-@media (max-width: 400px) {
-  section.services {
+/* Large screens*/
+@media (min-width: 1400px) {
+  footer {
     padding: 0;
+    padding-bottom: 10rem;
+  }
+
+  footer img {
+    width: 50%;
+  }
+}
+
+/* Desktop*/
+@media (min-width: 1000px) {
+  .services div:nth-child(4) {
+    grid-column: 2;
   }
 }
 
@@ -325,7 +341,7 @@ services div:nth:child(4) {
   html {
     scroll-padding-top: 20rem;
   }
-  
+
   h1 {
     position: fixed;
     top: 2.5rem;
@@ -334,47 +350,50 @@ services div:nth:child(4) {
     font-size: 2.5rem;
     margin: 0;
   }
-  
+
   main {
     margin-top: 20rem;
   }
-  
+
   nav {
     position: fixed;
     top: calc(100% + 1rem);
     width: 100%;
     padding: 0.5rem 1rem;
-    
+
     background-color: var(--c3);
   }
-  
+
   nav ul li {
     padding: 0.5rem;
   }
-  
+
   section.about img {
     width: 50%;
   }
-  
+
   section.contact {
     gap: 2.5rem;
   }
-  
+
   footer {
     padding: 0;
     height: 65rem;
   }
 }
 
-/* Large screens*/
-@media (min-width: 1000px) {
-  
+/* mini Phone*/
+@media (max-width: 400px) {
+  h2 p {
+    font-size: 2.5rem;
+  }
+
+  section.services {
+    padding: 2.5rem;
+  }
+
   footer {
     padding: 0;
-    padding-bottom: 10rem;
-  }
-  
-  footer img {
-    width: 50%;
+    height: 50rem;
   }
 }
