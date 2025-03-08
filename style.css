@@ -272,9 +272,6 @@ section.services {
   margin-bottom: 2.5rem;
 }
 
-.services div:nth-child(4) {
-  grid-column: 2;
-}
 
 section.exampls {}
 
@@ -310,6 +307,10 @@ footer {
 footer img {
   width: 75%;
   filter: drop-shadow(0 0 10rem var(--c2));
+}
+
+services div:nth:child(4) {
+  grid-column: auto;
 }
 
 /* Phone */
@@ -349,8 +350,8 @@ footer img {
     width: 50%;
   }
   
-  .services div:nth-child(4) {
-    grid-column: auto;
+  section.contact {
+    gap: 2.5rem;
   }
   
   footer {
@@ -359,11 +360,14 @@ footer img {
   }
 }
 
+@media (max-width: 1000px) {
+  .services div:nth:child(4) {
+    grid-column: 2;
+  }
+}
+
 /* Large screens*/
 @media (min-width: 1000px) {
-  .services div:nth-child(4) {
-    grid-column: auto;
-  }
   
   section.services {
     --auto-grid-min-size: 30rem;
