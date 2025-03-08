@@ -129,7 +129,6 @@ header span input {
   inset: 2.5rem;
   opacity: 0;
   z-index: 99;
-	cursor: pointer;
 }
 
 input[name="theme"]:checked+img {
@@ -244,7 +243,7 @@ section.about img {
 }
 
 section.services {
-  --auto-grid-min-size: 20rem;
+  --auto-grid-min-size: 30rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 2rem;
@@ -288,7 +287,6 @@ section.contact {
   bottom: 2.5rem;
   left: 2.5rem;
   transform: translateX(-12.5rem);
-	cursor: pointer;
   transition: 0.5s;
 }
 
@@ -326,9 +324,8 @@ services div:nth:child(4) {
     top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 0;
-    z-index: 1;
   }
   
   main {
@@ -353,7 +350,11 @@ services div:nth:child(4) {
   }
   
   section.contact {
-    gap: 1rem;
+    gap: 2.5rem;
+  }
+  
+  section.services {
+    padding: 0 1rem;
   }
   
   footer {
@@ -362,7 +363,7 @@ services div:nth:child(4) {
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 1000px) {
   .services div:nth:child(4) {
     grid-column: 2;
   }
