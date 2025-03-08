@@ -313,10 +313,6 @@ footer img {
   filter: drop-shadow(0 0 10rem var(--c2));
 }
 
-.services div:nth-child(4) {
-  grid-column: auto;
-}
-
 /* Large screens*/
 @media (min-width: 1400px) {
   footer {
@@ -331,8 +327,12 @@ footer img {
 
 /* Desktop*/
 @media (min-width: 1000px) {
-  .services div:nth-child(4) {
+  /* .services div:nth-child(4) {
     grid-column: 2;
+  } */
+
+  footer img {
+    width: 50%;
   }
 }
 
