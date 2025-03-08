@@ -313,6 +313,13 @@ services div:nth:child(4) {
   grid-column: auto;
 }
 
+/* mini Phone*/
+@media (max-width: 400px) {
+  section.services {
+    padding: 0;
+  }
+}
+
 /* Phone */
 @media (max-width: 700px) {
   html {
@@ -361,10 +368,6 @@ services div:nth:child(4) {
 
 /* Large screens*/
 @media (min-width: 1000px) {
-  
-  section.services {
-    --auto-grid-min-size: 30rem;
-  }
   
   footer {
     padding: 0;
