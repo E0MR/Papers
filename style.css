@@ -126,6 +126,7 @@ header span input {
   inset: 2.5rem;
   opacity: 0;
   z-index: 99;
+  cursor: pointer;
 }
 
 input[name="theme"]:checked + img {
@@ -293,6 +294,7 @@ section.contact {
   left: 2.5rem;
   transform: translateX(-12.5rem);
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .show {
